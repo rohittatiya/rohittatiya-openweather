@@ -10,7 +10,7 @@
   * cd [your-app-name/location]
   * npm install 
 
-# Run development Env:  
+# Run Development Env:  
   * ng serve/npm run start-dev
 
 # Run Production Env:  
