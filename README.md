@@ -16,7 +16,7 @@
 # Run Production Env:  
   ng build --prod
 
-# Run tests with watch changes:  
+# Run test Cases:  
   ng test
 
 ### What is this repository for? ###
@@ -31,10 +31,11 @@
 * Angular(6.1.0).
 * Bootstrap(3.3.7).
 * OpenweatherMapApi.
+* Jasmine and Karma.
 
 ### About this application? ###
 
-* This application is related to current 5 day weather forecast for any given city. For ex:-Pune,Mumbai,     Delhi etc.
+* This application is related to get current 5 day weather forecast for any given city. For ex:-Pune,Mumbai,     Delhi etc.
 * which will show the Temp,Min Temp,Max Temp,Humidity,Wind,Latitude,Longitude,Population and Cloud Nature    Image for that given time.
-* This will show on the basis of 3hours weather.
-* If city will not found then will show message that no data for selected city.
+* This will show on the basis of 3 Hours weather.
+* If city will not found then will show message that no data available for selected city.
