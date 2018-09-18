@@ -1,0 +1,33 @@
+@import "~font-awesome/css/font-awesome.css";
+@import "~open-weather-icons/dist/css/open-weather-icons.css";
+.weather-container {
+  .weather {
+    margin: 0 10px;
+    .panel-body {
+      margin: 5px;
+      border: 1px solid #efefef;
+    }
+    .weather-body {
+      background-color: #f9f9f9;
+      border-radius: 1px;
+      padding: 10px;
+      border-bottom: 1px solid #efefef;
+      text-align: center;
+      .time {
+        font-size: 20px;
+      }
+      i {
+        font-size: 60px;
+      }
+    }
+  }
+  margin-top: 5px;
+  width: 20%;
+  min-height: 90px;
+  float: left;
+  .owi {
+    font-size: 2.5em;
+    color: #2A2A2A;
+  }
+}
+

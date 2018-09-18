@@ -1,0 +1,65 @@
+<div class="weather-container" *ngFor="let weather of weathers">
+  <div class="panel panel-default weather">
+    <div class="panel-heading text-center">
+      <h4>{{ weather[0].dt | myDate| date: 'EEE, MMM d, y' }}</h4>
+    </div>
+    <div class="panel-body m-0 p-0" *ngFor="let item of weather">
+      <div class="row weather-body m-0">
+        <div class="col-sm-6">
+          <i class="owi owi-{{ item.weather[0].icon }}" title="{{ item.weather[0].main }}"></i>
+        </div>
+        <div class="col-sm-6">
+          <p class="time m-0">
+            {{ item.dt | myDate| date: 'hh:mm a' }}
+          </p>
+        </div>
+      </div>
+      <div class="row text-center m-0">
+        <div class="col-sm-6 p-1">
+          <p class="text-muted m-0">
+            Temp
+          </p>
+          <p class="temp m-0">
+            {{ item.main.temp }}&deg;C
+          </p>
+        </div>
+        <div class="col-sm-6 p-1">
+          <p class="text-muted m-0">
+            Max Temp
+          </p>
+          <p class="temp m-0">
+            {{ item.main.temp_max }}&deg;C
+          </p>
+        </div>
+      </div>
+      <div class="row text-center m-0">
+        <div class="col-sm-6 p-1">
+          <p class="text-muted m-0">
+            Min Temp
+          </p>
+          <p class="min-temp m-0">
+            {{ item.main.temp_min }}&deg;C
+          </p>
+        </div>
+        <div class="col-sm-6 p-1">
+          <p class="text-muted m-0">
+            Humidity
+          </p>
+          <p class="min-temp m-0">
+            {{ item.main.humidity }}%
+          </p>
+        </div>
+      </div>
+      <div class="row text-center m-0">
+        <div class="col-sm-6 p-1">
+          <p class="text-muted m-0">
+            Wind
+          </p>
+          <p class="min-temp m-0">
+            {{ item.wind.speed }}mph
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

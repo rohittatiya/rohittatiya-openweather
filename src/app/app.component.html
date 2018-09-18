@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <img src="../assets/images/Weather-icon (4).png">
+      </a>
+      <span class="navbar-brand">{{title}}</span>
+    </div>
+  </div>
+</nav>
+<div class="loading" *ngIf="loader">Loading&#8230;</div>
+<div id="find-cities" class="container-fluid">
+  <div class="container-fluid jumbotron jumbotron-color main-margin-top box-shadow">
+    <h2>
+      Search By City
+    </h2>
+    <form [formGroup]="searchForm" novalidate>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+        <input type="text" class="form-control" placeholder="Enter city name" name="cityName" id="cityName"
+          formControlName="cityName">
+      </div>
+      <div class="margin-top">
+        <button class="btn btn-primary btn-lg" [disabled]="!searchForm.valid" (click)="getWeather()" type="submit">
+          Go
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="alert alert-danger text-center" *ngIf="(weatherForecastData | json) == '{}' || isNotFound">
+      <h6>
+        <i class="fas fa-info-circle"></i> No Data Available For Selected City.
+      </h6>
+    </div>
+    <div class="col-md-12" *ngIf="isDataload">
+      <div class="well container-fluid">
+        <div class="col-xs-12">
+          <h3 class="text-center">5 Days Forecast Report</h3>
+          <h3><strong>Selected City</strong>:{{city| uppercase}} </h3>
+          <h2>Latitude:{{weatherForecastData.city.coord.lat}}</h2>
+          <h2>Longitude:{{weatherForecastData.city.coord.lon}}</h2>
+          <h2>Population:{{weatherForecastData.city.population}}</h2>
+        </div>
+      </div>
+      <app-weather [weathers]="weatherForecastData.weatherData"></app-weather>
+    </div>
+  </div>
+</div>
